@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+/* Responsive cho điện thoại */
+@media (max-width: 480px) {
+  .wrapper {
+    width: 95%; /* Thay đổi chiều rộng wrapper cho thiết bị di động */
+    padding: 20px; /* Thay đổi padding cho thiết bị di động */
+  }
+
+  .wrapper .img-area {
+    height: 120px; /* Thay đổi kích thước ảnh cho thiết bị di động */
+    width: 120px; /* Thay đổi kích thước ảnh cho thiết bị di động */
+  }
+
+  .wrapper .name {
+    font-size: 20px; /* Thay đổi kích thước font cho thiết bị di động */
+  }
+
+  .wrapper .about {
+    font-size: 14px; /* Thay đổi kích thước font cho thiết bị di động */
+  }
+
+  .social-icons {
+    margin: 10px 0 20px 0; /* Thay đổi margin cho thiết bị di động */
+  }
+
+  .social-icons a {
+    height: 30px; /* Thay đổi kích thước icon social cho thiết bị di động */
+    width: 30px; /* Thay đổi kích thước icon social cho thiết bị di động */
+  }
+
+  .social-icons a img {
+    height: 30px; /* Thay đổi kích thước icon social cho thiết bị di động */
+    width: 30px; /* Thay đổi kích thước icon social cho thiết bị di động */
+  }
+
+  .buttons button {
+    font-size: 14px; /* Thay đổi kích thước font cho thiết bị di động */
+    padding: 10px 0; /* Thay đổi padding cho thiết bị di động */
+  }
+
+  .social-share {
+    margin-top: 20px; /* Thay đổi margin cho thiết bị di động */
+  }
+
+  .social-share img {
+    width: 25px; /* Thay đổi kích thước icon share cho thiết bị di động */
+    margin-right: 8px; /* Thay đổi margin cho thiết bị di động */
+  }
+
+  .row {
+    font-size: 14px; /* Thay đổi kích thước font cho thiết bị di động */
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #ecf0f3;
+  transition: background-color 0.3s ease; /* Hiệu ứng màu nền chuyển đổi */
+}
+
+.wrapper,
+.wrapper .img-area,
+.social-icons a,
+.buttons button {
+  background: #ecf0f3;
+  box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng hover */
+}
+
+.wrapper {
+  position: relative;
+  width: 350px;
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.wrapper .icon {
+  font-size: 17px;
+  color: #31344b;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0.7;
+  top: 15px;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  font-size: 16px;
+}
+
+.wrapper .icon i {
+  position: relative;
+  z-index: 9;
+}
+
+.wrapper .icon.arrow {
+  left: 15px;
+}
+
+.wrapper .icon.dots {
+  right: 15px;
+}
+
+.wrapper .img-area {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-area .inner-area {
+  height: calc(100% - 25px);
+  width: calc(100% - 25px);
+  border-radius: 50%;
+}
+
+.inner-area img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.wrapper .name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 23px;
+  font-weight: 600;
+  color: #31344b;
+  margin: 10px 0 5px 0;
+}
+
+.wrapper .about {
+  color: #44476a;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.social-icons {
+  margin: 15px 0 25px 0;
+  display: flex;
+  align-items: center;
+}
+
+.social-icons a {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  margin: 0 5px;
+  display: inline-flex;
+  text-decoration: none;
+  border-radius: 50%;
+  overflow: hidden; /* Ẩn phần overlay màu */
+}
+
+.social-icons a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* Màu sắc overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Hiệu ứng hiển thị */
+}
+
+/* Khi hover vào các biểu tượng, làm chúng sáng lên và hiển thị overlay */
+.social-icons a:hover::before {
+  opacity: 0.5;
+}
+
+/* Hiệu ứng sáng khi hover */
+.social-icons a:hover {
+  filter: brightness(1.2); /* Điều chỉnh độ sáng khi hover */
+}
+
+/* Hiệu ứng sáng khi hover ở chế độ nền tối */
+body.dark-mode .social-icons a::before {
+  background-color: rgba(0, 0, 0, 0.5); /* Màu sắc overlay cho chế độ tối */
+}
+
+
+/* Áp dụng kích thước 40px cho hình ảnh bên trong thẻ <a> */
+.social-icons a img {
+  height: 40px;
+  width: 40px;
+}
+
+.wrapper .buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.buttons button {
+  position: relative;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 12px 0;
+  color: #31344b;
+  font-size: 17px;
+  font-weight: 400;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 4;
+}
+
+.buttons button:first-child {
+  margin-right: 10px;
+}
+
+.buttons button:last-child {
+  margin-left: 10px;
+}
+
+.wrapper .social-share {
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+  padding: 0 5px;
+  justify-content: space-between;
+}
+
+.social-share .row {
+  color: #31344b;
+  font-size: 17px;
+  cursor: pointer;
+  position: relative;
+}
+
+.social-share .row::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 2px;
+  background: #e0e6eb;
+  margin-left: -25px;
+}
+
+.row:first-child::before {
+  background: none;
+}
+
+.social-share .row i.icon-2 {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  color: #31344b;
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.row:nth-child(1):hover i.fa-heart,
+.row:nth-child(2):hover i.fa-comment {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* CSS cập nhật cho chế độ tối */
+body.dark-mode {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+.wrapper.dark-mode,
+.wrapper.dark-mode .icon,
+.wrapper.dark-mode .social-icons a,
+.wrapper.dark-mode .buttons button {
+  background: #1f1f1f;
+  box-shadow: -3px -3px 7px #333333, 3px 3px 5px #000000;
+}
+
+
+
+.wrapper.dark-mode .name,
+.wrapper.dark-mode .about,
+.wrapper.dark-mode .buttons button,
+.wrapper.dark-mode .social-share .row {
+  color: #d4d2d2; /* Màu chữ trong chế độ tối */
+}
+
+/* Biểu tượng SVG TikTok trong chế độ tối */
+body.dark-mode .social-icons a.tiktok img {
+  filter: brightness(0) invert(1); /* Chuyển màu sang trắng */
+}
+
+.icon-gear {
+  filter: brightness(0) invert(1); /* Chuyển màu sang trắng */
+}
+
+
+
+
+/* share */
+/* Bổ sung CSS cho hình ảnh */
+.social-share img {
+  width: 30px; 
+  margin-right: 10px; /* Khoảng cách giữa biểu tượng và các biểu tượng khác */
+}
+
+/* ... */
+.social-share {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+body.dark-mode .social-share img,
+body.dark-mode .social-share i {
+  filter: brightness(0) invert(1); /* Chuyển màu sang trắng */
+}
+body.dark-mode .icon.arrow img {
+  filter: brightness(0) invert(1); /* Chuyển màu sang trắng */
+}
+/* Hiệu ứng hover cho các button */
+.buttons button {
+  transition: background-color 0.3s, color 0.3s;
+  /* Các thuộc tính khác */
+}
+
+/* Hiệu ứng hover khi chế độ nền sáng */
+.buttons button:hover {
+  background-color: #000000; /* Màu nền khi hover ở chế độ tối */
+  color: #f0f0f0; /* Màu chữ khi hover */
+}
+
+/* Hiệu ứng hover khi chế độ tối */
+body.dark-mode .buttons button:hover {
+  background-color: #000000; /* Màu nền khi hover ở chế độ tối */
+  color: #ffffff; /* Màu chữ khi hover ở chế độ tối */
+}
+
+/* Hiệu ứng hover cho phần social-share */
+.social-share .row {
+  transition: background-color 0.3s, color 0.3s;
+  /* Các thuộc tính khác */
+}
+
+/* Hiệu ứng hover khi chế độ nền sáng */
+.social-share .row:hover {
+  opacity: 0.3;
+}
+
+/* Hiệu ứng hover khi chế độ tối */
+body.dark-mode .social-share .row:hover {
+  opacity: 0.3;
+}
+
+
+/* Hiệu ứng hover cho class .icon.dots */
+.icon.dots {
+  transition: transform 0.3s;
+}
+
+/* Hiệu ứng hover cho class .icon.dots khi chế độ nền sáng */
+.icon.dots:hover {
+  transform: scale(1.1); /* Scale lớn hơn khi hover */
+}
+
+/* Hiệu ứng hover cho class .icon.dots khi chế độ tối */
+body.dark-mode .icon.dots:hover {
+  transform: scale(1.1); /* Scale lớn hơn khi hover ở chế độ tối */
+}
+

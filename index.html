@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Profile Phạm Hương</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="img-area">
+        <div class="inner-area">
+          <img src="Image/Avatar1.jpg" alt="" />
+        </div>
+      </div>
+      <div class="icon arrow">
+        <a href="#" class="back">
+          <img
+            src="Image/arrow.svg"
+            alt="Facebook Icon"
+            style="width: 25px; margin-left: 6px; margin-top: 5px; margin-right: 5px;"
+          />
+        </a>
+      </div>
+      <!-- Your existing HTML structure remains the same -->
+      <div class="icon dots" id="darkModeToggle">
+        <a href="#" class="darkMode">
+          <img
+            src="Image/night-mode.svg"
+            alt="Facebook Icon"
+            style="width: 25px; margin-left: 6px; margin-top: 5px; margin-right: 5px;"
+          />
+        </a>
+      </div>
+
+      <div class="name">Trần Vĩnh Tấn Đạt</div>
+      <div class="about">Web Developer</div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=100021970390229" class="fb" target="_blank">
+          <img
+            src="Image/facebook.svg"
+            alt="Facebook Icon"
+            style="width: 30px; margin-left: 5px; align-items: center; justify-content: center;"
+          />
+        </a>
+        <!-- Tương tự cho các liên kết khác -->
+        <a href="" class="instagram" target="_blank">
+          <img src="Image/instagram.svg" alt="Instagram Icon" style="align-items: center; justify-content: center;" />
+        </a>
+        <a href="https://www.tiktok.com/@tandat270102?fbclid=IwAR2vcRkvNq71AQdIqPXfnzBUp4DY2PlViZiDCn-3xIegSFhmF7YXLaRU538" class="tiktok" target="_blank">
+          <img
+            src="Image/tiktok.svg"
+            alt="Tik-Tok Icon"
+            style="height: 27px; margin-top: 6px; align-items: center; justify-content: center;"
+          />
+        </a>
+        <a href="https://www.youtube.com/" class="yt" target="_blank">
+          <img
+            src="Image/youtube.svg"
+            alt="Youtube Icon"
+            style="width: 30px; margin-left: 5px; align-items: center; justify-content: center;"
+          />
+        </a>
+      </div>
+
+      <div class="buttons">
+        <button>Message</button>
+        <button>Subscribe</button>
+      </div>
+      <div class="social-share">
+        <div class="row">
+          <img
+            src="Image/love.svg"
+            alt="Heart Icon"
+            style="width: 20px; margin-right: 10px"
+          />
+          <i class="far fa-heart"></i>
+          <i class="icon-2 fas fa-heart"></i>
+          <span>20.4k</span>
+        </div>
+        <div class="row">
+          <img
+            src="Image/comment (1).svg"
+            alt="Comment Icon"
+            style="width: 20px; margin-right: 10px"
+          />
+          <i class="far fa-comment"></i>
+          <i class="icon-2 fas fa-comment"></i>
+          <span>14.3k</span>
+        </div>
+        <div class="row">
+          <img
+            src="Image/share2.svg"
+            alt="Share Icon"
+            style="width: 20px; margin-right: 10px"
+          />
+          <i class="fas fa-share"></i>
+          <span>12.8k</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const darkModeToggle = document.getElementById("darkModeToggle");
+      let isDarkMode = false;
+
+      darkModeToggle.addEventListener("click", () => {
+        isDarkMode = !isDarkMode;
+        if (isDarkMode) {
+          document.body.classList.add("dark-mode");
+          document.querySelector(".wrapper").classList.add("dark-mode");
+          // Thay đổi icon khi chuyển sang chế độ tối
+          const dotsIcon = document.querySelector(".icon.dots img");
+          dotsIcon.src = "Image/gear.svg";
+          dotsIcon.classList.add("icon-gear"); // Thêm class mới
+        } else {
+          document.body.classList.remove("dark-mode");
+          document.querySelector(".wrapper").classList.remove("dark-mode");
+          // Khôi phục icon ban đầu khi quay về chế độ sáng
+          const dotsIcon = document.querySelector(".icon.dots img");
+          dotsIcon.src = "Image/night-mode.svg"; // Đặt lại đường dẫn đến icon ban đầu
+          dotsIcon.classList.remove("icon-gear"); // Loại bỏ class khi quay về chế độ sáng
+        }
+      });
+    </script>
+  </body>
+</html>
